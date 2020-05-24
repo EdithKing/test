@@ -1,0 +1,24 @@
+server:
+  port: 12001
+
+
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/EdithKing/zhuangsheng-config
+          search-paths:
+            - zhuangsheng-config
+          username: EdithKing
+          password: Rong2677
+      label: dev
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

@@ -1,0 +1,21 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: fegin-service
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 3000
+
+logging:
+  level:
+    com.example.feginopen10001.controller.OrderFeginController: debug

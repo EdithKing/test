@@ -1,0 +1,20 @@
+server:
+  port: 12002
+
+
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:12001
+      name: application
+      profile: dev

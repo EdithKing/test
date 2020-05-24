@@ -1,0 +1,28 @@
+server:
+  port: 11001
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: index_routh
+          uri: lb://FEGIN-SERVICE
+          predicates:
+            - Path=/index/*
+        - id: root_routh
+          uri: lb://FEGIN-SERVICE
+          predicates:
+            - Path=/
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
